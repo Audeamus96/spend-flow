@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "mongoose": "^8.8.4",
     "next": "15.0.3",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.6",
@@ -22,5 +23,7 @@
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "typescript": "^5"
-  }
+  },
+  "author": "Audeamus",
+  "description": "Spend Flow, a web app for tracking and visualizing expenses."
 }
