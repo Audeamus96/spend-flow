@@ -10,8 +10,16 @@ export async function GET() {
 
 export async function POST(req: Request) {
     await connectDB();
-    const data = req.json()
+    const data = await req.json()
     const newUser = await User.create(data);
-    return NextResponse.json(newUser);
+    return NextResponse.json({newUser},{status: 201});
 }
 
+export async function DELETE(req: Request){
+    await connectDB();
+    const url = new URL(req.url);
+    const id = url.searchParams.get('id');
+
+    const deletedUser = await User.findByIdAndDelete(id);
+    return NextResponse.json({message: `User successfully deleted: ${deletedUser}`}, {status:200});
+}
